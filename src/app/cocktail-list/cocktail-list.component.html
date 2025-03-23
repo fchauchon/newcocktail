@@ -1,0 +1,9 @@
+<div class="bg-color-1">
+    <div class="row">
+        @for(current of cocktails; track current.id) {
+            <div class="col-3">
+                <app-cocktail [cocktail]="current"></app-cocktail>
+            </div>
+            }
+    </div>
+</div>

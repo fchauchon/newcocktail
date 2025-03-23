@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { CocktailComponent } from '../cocktail/cocktail.component';
 
 @Component({
   selector: 'app-with-or-without',
-  imports: [],
+  imports: [CocktailComponent],
   templateUrl: './with-or-without.component.html',
   styleUrl: './with-or-without.component.css'
 })

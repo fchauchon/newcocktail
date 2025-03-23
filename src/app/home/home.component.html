@@ -2,6 +2,8 @@
     <div class="bg-color-3 d-flex justify-content-center">Vous avez sélectionné le cocktail : {{ lastCocktail }}</div>
     <div class="padding-25 bg-color-1">
         <div class="row">
+            <app-letter-bar></app-letter-bar>
+            <app-search (onFilter)="onFilter($event)"></app-search>
             <div class="col-12 d-flex justify-content-center f-large padding-b-25">
                 <span class="titre">Tous les cocktails</span>
             </div>
