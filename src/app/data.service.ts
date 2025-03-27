@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
+import { Cocktail } from './cocktail.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +39,9 @@ export class DataService {
     return of(this.cocktails.filter( el => el.name.toLocaleLowerCase().indexOf(search.toLocaleLowerCase()) >= 0 ))
   }
 
+  getCocktailsBeginWith(begin: string): Observable<Cocktail[]> {
+    return this.getCocktails().pipe(
+        map( (cocktails: Cocktail[]) => cocktails.filter( (el: Cocktail) => el.name.toLocaleLowerCase().indexOf(begin.toLocaleLowerCase()) === 0 ) )
+    )
+  }
 }

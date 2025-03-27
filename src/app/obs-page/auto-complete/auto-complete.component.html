@@ -1,0 +1,12 @@
+<h3>AutoComplete</h3>
+Entrer au moins 2 caractères et...
+<form [formGroup]="formGroup">
+    <input formControlName="search">
+    <ul>
+      @for(sugg of suggestions; track sugg) {
+        <li>
+            {{ sugg.name }}
+        </li>
+      }
+    </ul>
+  </form>
