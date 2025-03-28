@@ -1,4 +1,4 @@
-import { FormControl, FormGroup, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { combineLatest, interval, map } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { combineLatest, interval, map } from 'rxjs';
 })
 export class PasswordComponent implements OnInit {
 
-    form: UntypedFormGroup
+    form: FormGroup
     password: FormControl<string>
     confirmPassword: FormControl<string>
     percent = 0
@@ -19,12 +19,10 @@ export class PasswordComponent implements OnInit {
     constructor() {
         this.password = new FormControl<string>('', { nonNullable: true })
         this.confirmPassword = new FormControl<string>('', { nonNullable: true })
-        this.form = new UntypedFormGroup(
-            {
+        this.form = new FormGroup({
                 password: this.password,
                 confirmPassword: this.confirmPassword
-            }
-        )
+        })
     }
 
     ngOnInit(): void {
