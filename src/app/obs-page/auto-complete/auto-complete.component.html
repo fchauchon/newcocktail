@@ -3,7 +3,7 @@ Entrer au moins 2 caractères et...
 <form [formGroup]="formGroup">
     <input formControlName="search">
     <ul>
-      @for(sugg of suggestions; track sugg) {
+      @for(sugg of suggestions; track sugg.id) {
         <li>
             {{ sugg.name }}
         </li>

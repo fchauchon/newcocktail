@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { debounceTime, filter, switchMap } from 'rxjs';
 import { DataService } from '../../data.service';
 import { Cocktail } from '../../cocktail.interface';
@@ -14,12 +14,12 @@ export class AutoCompleteComponent implements OnInit {
 
     suggestions: Cocktail[] = []
 
-    formGroup: UntypedFormGroup
+    formGroup: FormGroup
     searchControl: FormControl<string>
 
     constructor(private dataService: DataService) {
         this.searchControl = new FormControl('', { nonNullable: true })
-        this.formGroup = new UntypedFormGroup({
+        this.formGroup = new FormGroup({
             search: this.searchControl
         })
     }

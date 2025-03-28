@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { CommunicationService } from '../../communication.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { CommunicationService } from '../../communication.service';
 })
 export class ProducerComponent implements OnInit {
 
-    formGroup: UntypedFormGroup
+    formGroup: FormGroup
     dataCtrl: FormControl<string>
 
     constructor(private communicationService: CommunicationService) {
       this.dataCtrl = new FormControl<string>('', { nonNullable: true })
-      this.formGroup = new UntypedFormGroup({
+      this.formGroup = new FormGroup({
         data: this.dataCtrl
       })
     }
