@@ -1,17 +1,17 @@
-import { Component, inject, Inject, OnInit } from '@angular/core';
-import { CocktailComponent } from '../cocktail/cocktail.component';
-import { IntroComponent } from '../intro/intro.component';
-import { DataService } from '../data.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { Cocktail } from '../cocktail/cocktail';
+import { Data } from '../data';
+import { Intro } from '../intro/intro';
 
 @Component({
   selector: 'app-body',
-  imports: [IntroComponent, CocktailComponent],
-  templateUrl: './body.component.html',
-  styleUrl: './body.component.css'
+  imports: [Intro, Cocktail],
+  templateUrl: './body.html',
+  styleUrl: './body.css'
 })
-export class BodyComponent implements OnInit{
+export class Body implements OnInit{
 
-  dataService = inject(DataService)
+  dataService = inject(Data)
 
   lastCocktail: string = '(aucun)'
   cocktailsWith = <any>[]
