@@ -1,18 +1,18 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CocktailComponent } from '../cocktail/cocktail.component';
-import { DataService } from '../data.service';
-import { LetterBarComponent } from '../letter-bar/letter-bar.component';
-import { SearchComponent } from '../search/search.component';
+import { Cocktail } from '../cocktail/cocktail';
+import { Data } from '../data';
+import { LetterBar } from '../letter-bar/letter-bar';
+import { Search } from '../search/search';
 
 @Component({
   selector: 'app-home',
-  imports: [CocktailComponent, LetterBarComponent, SearchComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  imports: [Cocktail, LetterBar, Search],
+  templateUrl: './home.html',
+  styleUrl: './home.css'
 })
-export class HomeComponent implements OnInit{
+export class Home implements OnInit{
 
-  dataService = inject(DataService)
+  dataService = inject(Data)
 
   lastCocktail: string = '(aucun)'
   cocktails = <any>[]

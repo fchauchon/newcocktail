@@ -3,10 +3,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-cocktail',
   imports: [],
-  templateUrl: './cocktail.component.html',
-  styleUrl: './cocktail.component.css'
+  templateUrl: './cocktail.html',
+  styleUrl: './cocktail.css'
 })
-export class CocktailComponent implements OnInit {
+export class Cocktail implements OnInit {
   @Input() cocktail: any
   @Output() eventOut = new EventEmitter<string>()
   isHidden: boolean = false;

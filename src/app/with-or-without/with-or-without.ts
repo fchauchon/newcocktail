@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
-import { DataService } from '../data.service';
 import { Router } from '@angular/router';
-import { CocktailComponent } from '../cocktail/cocktail.component';
+import { Cocktail } from '../cocktail/cocktail';
+import { Data } from '../data';
 
 @Component({
   selector: 'app-with-or-without',
-  imports: [CocktailComponent],
-  templateUrl: './with-or-without.component.html',
-  styleUrl: './with-or-without.component.css'
+  imports: [Cocktail],
+  templateUrl: './with-or-without.html',
+  styleUrl: './with-or-without.css'
 })
-export class WithOrWithoutComponent {
+export class WithOrWithout {
   router = inject(Router)
-  dataService = inject(DataService)
+  dataService = inject(Data)
   cocktails: Array<any> = []
 
   ngOnInit(): void {

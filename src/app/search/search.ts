@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Output, output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
   imports: [ReactiveFormsModule],
-  templateUrl: './search.component.html',
-  styleUrl: './search.component.css'
+  templateUrl: './search.html',
+  styleUrl: './search.css'
 })
-export class SearchComponent {
+export class Search {
   @Output() onFilter = new EventEmitter<string>()
   
   formGroup: FormGroup

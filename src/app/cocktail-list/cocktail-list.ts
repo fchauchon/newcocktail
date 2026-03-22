@@ -1,20 +1,20 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from '../data.service';
-import { CocktailComponent } from '../cocktail/cocktail.component';
+import { Cocktail } from '../cocktail/cocktail';
+import { Data } from '../data';
 
 @Component({
   selector: 'app-cocktail-list',
-  imports: [CocktailComponent],
-  templateUrl: './cocktail-list.component.html',
-  styleUrl: './cocktail-list.component.css'
+  imports: [Cocktail],
+  templateUrl: './cocktail-list.html',
+  styleUrl: './cocktail-list.css'
 })
-export class CocktailListComponent {
+export class CocktailList {
   cocktails: any[] = []
   
   route = inject(ActivatedRoute)
   router = inject(Router)
-  dataService = inject(DataService)
+  dataService = inject(Data)
 
   ngOnInit(): void {
       this.route.paramMap.subscribe(

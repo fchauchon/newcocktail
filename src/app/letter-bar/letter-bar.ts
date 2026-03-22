@@ -4,10 +4,10 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-letter-bar',
   imports: [RouterLink],
-  templateUrl: './letter-bar.component.html',
-  styleUrl: './letter-bar.component.css'
+  templateUrl: './letter-bar.html',
+  styleUrl: './letter-bar.css'
 })
-export class LetterBarComponent {
+export class LetterBar {
   letters: Array<string> = []
 
   ngOnInit(): void {
